@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Repeat Word Using Prompt</title>
+</head>
+<body>
+
+  <h3>Repeated Word Details:</h3>
+  <p><strong>Word:</strong> <span id="word"></span></p>
+  <p><strong>Count:</strong> <span id="count"></span></p>
+  <p><strong>Result:</strong> <span id="result"></span></p>
+
+  <script>
+    function repeatWithPrompt() {
+      let word = window.prompt("Enter the word to repeat:");
+      let count = window.prompt("Enter how many times to repeat:");
+      count = parseInt(count);
+      
+      let output = "";
+
+      if (word === null || word.trim() === "") {
+        output = "Please enter a valid word.";
+      } else if (isNaN(count) || count < 1) {
+        output = "Please enter a valid number greater than 0.";
+      } else {
+        for (let i = 0; i < count; i++) {
+          output += word + " ";
+        }
+        document.getElementById("word").innerText = word;
+        document.getElementById("count").innerText = count;
+      }
+
+      document.getElementById("result").innerText = output;
+    }
+
+    window.onload = repeatWithPrompt;
+  </script>
+
+</body>
+</html>

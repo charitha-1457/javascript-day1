@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script type="text/javascript">
+      var num = window.prompt("Enter the number");
+      num = Number(num);
+
+      if (isNaN(num)) {
+        document.writeln("<b>Invalid input. Please enter a number.</b>");
+      } else {
+        if (num > 0) {
+          document.writeln("<b>Number is positive</b>");
+        } else {
+          if (num < 0) {
+            document.writeln("<b>Number is negative</b>");
+          } else {
+            document.writeln("<b>Number is zero</b>");
+          }
+        }
+      }
+    </script>
+
+    <p>Set the variable to different values and then try...</p>
+  </body>
+</html>

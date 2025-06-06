@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grade Checker</title>
+</head>
+<body>
+
+  <button onclick="checkGrade()">Enter Marks</button>
+
+  <p id="result"></p>
+
+  <script>
+    function checkGrade() {
+      let input = window.prompt("Enter your marks (0 to 100):");
+      let grade = "";
+      
+      if (input === null) {
+        grade = "No input provided.";
+      } else {
+        let marks = Number(input);
+        if (input.trim() === "" || isNaN(marks)) {
+          grade = "Please enter a valid number.";
+        } else if (marks < 0 || marks > 100) {
+          grade = "Invalid marks! Enter a value between 0 and 100.";
+        } else if (marks < 40) {
+          grade = "Fail";
+        } else if (marks < 50) {
+          grade = "E Grade";
+        } else if (marks < 60) {
+          grade = "D Grade";
+        } else if (marks < 70) {
+          grade = "C Grade";
+        } else if (marks < 80) {
+          grade = "B Grade";
+        } else if (marks < 90) {
+          grade = "A Grade";
+        } else {
+          grade = "S Grade";
+        }
+      }
+
+      document.getElementById("result").innerText = grade;
+    }
+  </script>
+
+</body>
+</html>
